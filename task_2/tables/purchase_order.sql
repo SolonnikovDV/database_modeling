@@ -23,4 +23,26 @@ CREATE TABLE "public"."purchase_order" (
 CREATE INDEX "index_order_date" ON "public"."purchase_order" USING btree( "order_date" );
 -- -------------------------------------------------------------
 
+-- CREATE INDEX "index_spec_name" ------------------------------
+alter table public.purchase_order
+    add constraint customer_id_f_key
+        foreign key (customer_id_f_key) references public.customer;
+
+alter table public.purchase_order
+    add constraint delivery_id_f_key
+        foreign key (delivery_id_f_key) references public.delivery;
+
+alter table public.purchase_order
+    add constraint pick_point_id_f_key
+        foreign key (pick_point_id_f_key) references public.pick_point;
+
+alter table public.purchase_order
+    add constraint price_id_f_key
+        foreign key (price_id_f_key) references public.price;
+
+alter table public.purchase_order
+    add constraint product_id_f_key
+        foreign key (product_id_f_key) references public.product;
+-- -------------------------------------------------------------
+
 COMMIT;
