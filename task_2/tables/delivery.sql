@@ -17,4 +17,10 @@ CREATE TABLE "public"."delivery" (
 CREATE INDEX "index_delivery_type" ON "public"."delivery" USING btree( "delivery_type" );
 -- -------------------------------------------------------------
 
+-- CREATE FOREIGN KEYS -----------------------------------------
+alter table public.delivery
+    add constraint delivery_location_location_id_fk
+        foreign key (location_id_f_key) references public.location;
+-- -------------------------------------------------------------
+
 COMMIT;
