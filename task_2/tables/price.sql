@@ -17,9 +17,14 @@ CREATE TABLE "public"."price" (
 -- -------------------------------------------------------------
 
 -- CREATE INDEX "index_base_price" -----------------------------
---searchiing for all types of prices
+-- searching for all types of prices
 CREATE INDEX "index_base_price" ON "public"."price" USING btree( "base_price" Asc NULLS Last, "base_promo_price" Asc NULLS Last, "sale_price" Asc NULLS Last );
 -- -------------------------------------------------------------
 
+-- CREATE FOREIGN KEYS -----------------------------------------
+alter table public.price
+    add constraint price_product_product_id_fk
+        foreign key ("product_Id_f_key") references public.product;
+-- -------------------------------------------------------------
 
 COMMIT;
