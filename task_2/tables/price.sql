@@ -17,11 +17,9 @@ CREATE TABLE "public"."price" (
 -- -------------------------------------------------------------
 
 -- CREATE INDEX "index_base_price" -----------------------------
-CREATE INDEX "index_base_price" ON "public"."price" USING btree( "base_price" Asc NULLS Last, "base_promo_price" Asc NULLS Last );
+--searchiing for all types of prices
+CREATE INDEX "index_base_price" ON "public"."price" USING btree( "base_price" Asc NULLS Last, "base_promo_price" Asc NULLS Last, "sale_price" Asc NULLS Last );
 -- -------------------------------------------------------------
 
--- CREATE INDEX "index_sale_price" -----------------------------
-CREATE INDEX "index_sale_price" ON "public"."price" USING btree( "sale_price" );
--- -------------------------------------------------------------
 
 COMMIT;
