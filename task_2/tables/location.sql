@@ -17,6 +17,7 @@ CREATE TABLE "public"."location" (
 -- -------------------------------------------------------------
 
 -- CREATE INDEX "index_stock_address" --------------------------
+--conposite index, all fields use mostly together in a search queries
 CREATE INDEX "index_stock_address" ON "public"."location" USING btree( "country" Asc NULLS Last, "state" Asc NULLS Last, "city" Asc NULLS Last, "street" Asc NULLS Last, "place" Asc NULLS Last, "office" Asc NULLS Last );
 -- -------------------------------------------------------------
 
