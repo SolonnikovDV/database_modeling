@@ -9,6 +9,7 @@ CREATE TABLE "public"."containers_on_pick_point" (
 -- -------------------------------------------------------------
 
 -- CREATE INDEX "index_container_properties_id_f_key" ----------
+--searching containers
 CREATE INDEX "index_container_properties_id_f_key" ON "public"."containers_on_pick_point" USING btree( "container_properties_id_f_key" );
 -- -------------------------------------------------------------
 
