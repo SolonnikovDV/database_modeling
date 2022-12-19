@@ -14,8 +14,18 @@ CREATE TABLE "public"."vendor" (
 
 -- CREATE INDEX "index_vendor_name" ----------------------------
 -- fast search info about vendor in one query
-CREATE INDEX "index_vendor_name" 
+CREATE INDEX "index_vendor_name"
 	ON "public"."vendor" USING btree( "vendor_name" Asc NULLS Last, "location_id_f_key" Asc NULLS Last, "vendor_type_id_f_key" Asc NULLS Last );
+-- -------------------------------------------------------------
+
+-- CREATE FOREIGN KEYS -----------------------------------------
+alter table public.vendor
+    add constraint vendor_agent_type_agent_type_id_fk
+        foreign key (vendor_type_id_f_key) references public.agent_type;
+
+alter table public.vendor
+    add constraint vendor_location_location_id_fk
+        foreign key (location_id_f_key) references public.location;
 -- -------------------------------------------------------------
 
 COMMIT;
