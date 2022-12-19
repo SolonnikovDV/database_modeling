@@ -10,6 +10,7 @@ CREATE TABLE "public"."category" (
 -- -------------------------------------------------------------
 
 -- CREATE INDEX "index_name" -----------------------------------
+--search by category
 CREATE INDEX "index_name" ON "public"."category" USING btree( "name" );
 -- -------------------------------------------------------------
 
