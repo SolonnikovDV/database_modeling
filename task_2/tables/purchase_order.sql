@@ -19,6 +19,7 @@ CREATE TABLE "public"."purchase_order" (
 -- -------------------------------------------------------------
 
 -- CREATE INDEX "index_order_date" --------------------
+-- sort by order date::timestamp
 CREATE INDEX "index_order_date" ON "public"."purchase_order" USING btree( "order_date" );
 -- -------------------------------------------------------------
 
