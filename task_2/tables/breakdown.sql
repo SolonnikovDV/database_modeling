@@ -12,7 +12,8 @@ CREATE TABLE "public"."breakdown" (
 -- -------------------------------------------------------------
 
 -- CREATE INDEX "index_promo_name_bonus_type_breakdown" --------
-CREATE INDEX "index_promo_name_bonus_type_breakdown" ON "public"."breakdown" USING btree( "promo_name" Asc NULLS Last, "bonus_type" Asc NULLS Last, "total_breakdown" Asc NULLS Last );
+CREATE INDEX "index_promo_name_bonus_type_breakdown" 
+	ON "public"."breakdown" USING btree( "promo_name" Asc NULLS Last, "bonus_type" Asc NULLS Last, "total_breakdown" Asc NULLS Last );
 -- -------------------------------------------------------------
 
 COMMIT;
