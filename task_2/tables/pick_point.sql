@@ -23,4 +23,10 @@ CREATE INDEX "index_current_capacity" ON "public"."pick_point" USING btree( "cur
 CREATE INDEX "index_location_id_f_key" ON "public"."pick_point" USING btree( "location_id_f_key" );
 -- -------------------------------------------------------------
 
+-- CREATE FOREIGN KEYS -----------------------------------------
+alter table public.pick_point
+    add constraint pick_point_transaction_to_pick_point_transaction_id_fk
+        foreign key (to_pick_point_transaction_if_f_key) references public.to_pick_point_transaction;
+-- -------------------------------------------------------------
+
 COMMIT;
