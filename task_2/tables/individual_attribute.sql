@@ -25,4 +25,14 @@ CREATE INDEX "index_inn" ON "public"."individual_attribute" USING btree( "inn" )
 CREATE INDEX "index_agent_type_f_key" ON "public"."individual_attribute" USING btree( "agent_type_f_key" );
 -- -------------------------------------------------------------
 
+-- CREATE FOREIGN KEYS -----------------------------------------
+alter table public.individual_attribute
+    add constraint agent_type_f_key
+        foreign key (agent_type_f_key) references public.agent_type;
+
+alter table public.individual_attribute
+    add constraint location_id_f_key
+        foreign key (location_id_f_key) references public.location;
+-- -------------------------------------------------------------
+
 COMMIT;
