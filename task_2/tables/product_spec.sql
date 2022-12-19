@@ -13,6 +13,7 @@ CREATE TABLE "public"."product_spec" (
 -- -------------------------------------------------------------
 
 -- CREATE INDEX "index_spec_name" ------------------------------
+-- find py spec unit name, for example, search spec_name.display == 'LED', or search spec_name.mesuare == 'Gb'
 CREATE INDEX "index_spec_name" ON "public"."product_spec" USING btree( "spec_name" );
 -- -------------------------------------------------------------
 
