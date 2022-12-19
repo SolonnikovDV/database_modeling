@@ -30,4 +30,18 @@ CREATE INDEX "index_product_name" ON "public"."supply_order" USING btree( "produ
 CREATE INDEX "index_vendor_id_f_key" ON "public"."supply_order" USING btree( "vendor_id_f_key" );
 -- -------------------------------------------------------------
 
+-- CREATE FOREIGN KEYS -----------------------------------------
+alter table public.supply_order
+    add constraint supply_order_price_price_id_fk
+        foreign key (price_id_f_key) references public.price;
+
+alter table public.supply_order
+    add constraint supply_order_unit_properties_unit_properties_id_fk
+        foreign key (unit_properties_f_key) references public.unit_properties;
+
+alter table public.supply_order
+    add constraint supply_order_vendor_vendor_id_fk
+        foreign key (vendor_id_f_key) references public.vendor;
+-- -------------------------------------------------------------
+
 COMMIT;
