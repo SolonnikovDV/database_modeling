@@ -11,6 +11,7 @@ CREATE TABLE "public"."customer" (
 -- -------------------------------------------------------------
 
 -- CREATE INDEX "index_personal_breakdown" ---------------------
+--look for breakdown value for customer
 CREATE INDEX "index_personal_breakdown" ON "public"."customer" USING btree( "personal_breakdown" Asc NULLS Last );
 -- -------------------------------------------------------------
 
