@@ -14,6 +14,7 @@ CREATE TABLE "public"."customer_loyality_breakdown" (
 -- -------------------------------------------------------------
 
 -- CREATE INDEX "index_loyality_breakdown" ---------------------
+--first and second indexes for searching loyality breakdown for customer
 CREATE INDEX "index_loyality_breakdown" ON "public"."customer_loyality_breakdown" USING btree( "loyality_breakdown_program" Asc NULLS Last, "loyality_breakdown_id" Asc NULLS Last, "loyality_breakdown_value" Asc NULLS Last );
 -- -------------------------------------------------------------
 
