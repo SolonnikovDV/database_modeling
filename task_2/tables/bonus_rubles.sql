@@ -20,4 +20,14 @@ COMMENT ON COLUMN "public"."bonus_rubles"."loyality_breakdown_id_f_key" IS 'perc
 CREATE INDEX "index_total_bonus" ON "public"."bonus_rubles" USING btree( "total_bonus" );
 -- -------------------------------------------------------------
 
+-- CREATE FOREIGN KEYS -----------------------------------------
+alter table public.bonus_rubles
+    add constraint bonus_rubles_breakdown_breakdown_id_fk
+        foreign key (breakdown_id_f_key) references public.breakdown;
+
+alter table public.bonus_rubles
+    add constraint bonus_rubles_product_product_id_fk
+        foreign key ("product_Id_f_key") references public.product;
+-- -------------------------------------------------------------
+
 COMMIT;
