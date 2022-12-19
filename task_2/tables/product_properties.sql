@@ -10,10 +10,12 @@ CREATE TABLE "public"."product_properties" (
 -- -------------------------------------------------------------
 
 -- CREATE INDEX "index_unit_properties_id_f_key" ---------------
+-- search by unit mesuare
 CREATE INDEX "index_unit_properties_id_f_key" ON "public"."product_properties" USING btree( "unit_properties_id_f_key" );
 -- -------------------------------------------------------------
 
 -- CREATE INDEX "index_product_spec_id_f_key" ------------------
+-- search by specification position
 CREATE INDEX "index_product_spec_id_f_key" ON "public"."product_properties" USING btree( "product_spec_id_f_key" );
 -- -------------------------------------------------------------
 
