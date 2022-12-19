@@ -19,4 +19,14 @@ create index company_attribute_inn_index
     on company_attribute (inn);
 -- -------------------------------------------------------------
 
+-- CREATE FOREIGN KEYS -----------------------------------------
+alter table public.company_attribute
+    add constraint company_attribute_agent_type_agent_type_id_fk
+        foreign key (agent_type_f_key) references public.agent_type;
+
+alter table public.company_attribute
+    add constraint company_attribute_location_location_id_fk
+        foreign key (location_id_f_key) references public.location;
+-- -------------------------------------------------------------
+
 COMMIT;
