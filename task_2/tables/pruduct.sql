@@ -16,19 +16,27 @@ CREATE TABLE "public"."product" (
 -- -------------------------------------------------------------
 
 -- CREATE INDEX "index_name_brand_category" --------------------
-CREATE INDEX "index_name_brand_category" ON "public"."product" USING btree( "name_ru" Asc NULLS Last, "brand_f_key" Asc NULLS Last, "category_f_id" Asc NULLS Last );
+-- product name, brand, category mostly using together in a quieryes
+CREATE INDEX "index_name_brand_category" 
+	ON "public"."product" USING btree( "name_ru" Asc NULLS Last, "brand_f_key" Asc NULLS Last, "category_f_id" Asc NULLS Last );
 -- -------------------------------------------------------------
 
 -- CREATE INDEX "index_status_f_key" ---------------------------
-CREATE INDEX "index_status_f_key" ON "public"."product" USING btree( "status_f_key" );
+-- filtering by status sold_out / avalliable
+CREATE INDEX "index_status_f_key" 
+	ON "public"."product" USING btree( "status_f_key" );
 -- -------------------------------------------------------------
 
 -- CREATE INDEX "index_rating_id_f_key" ------------------------
-CREATE INDEX "index_rating_id_f_key" ON "public"."product" USING btree( "rating_id_f_key" );
+-- sort by rating
+CREATE INDEX "index_rating_id_f_key" 
+	ON "public"."product" USING btree( "rating_id_f_key" );
 -- -------------------------------------------------------------
 
 -- CREATE INDEX "index_properties_id_f_key" --------------------
-CREATE INDEX "index_properties_id_f_key" ON "public"."product" USING btree( "product_properties_id_f_key" );
+-- find by product propeties 
+CREATE INDEX "index_properties_id_f_key" 
+	ON "public"."product" USING btree( "product_properties_id_f_key" );
 -- -------------------------------------------------------------
 
 -- CREATE FOREIGN KEYS for "product" table ------------------------
