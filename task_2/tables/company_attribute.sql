@@ -11,11 +11,12 @@ CREATE TABLE "public"."company_attribute" (
 -- -------------------------------------------------------------
 
 -- CREATE INDEX "index_location_id_f_key2" ---------------------
-CREATE INDEX "index_location_id_f_key2" ON "public"."company_attribute" USING btree( "location_id_f_key" );
--- -------------------------------------------------------------
+--search by company name
+create index company_attribute_company_name_short_index
+    on company_attribute (company_name_short);
 
--- CREATE INDEX "index_agent_type_f_key1" ----------------------
-CREATE INDEX "index_agent_type_f_key1" ON "public"."company_attribute" USING btree( "agent_type_f_key" );
+create index company_attribute_inn_index
+    on company_attribute (inn);
 -- -------------------------------------------------------------
 
 COMMIT;
