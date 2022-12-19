@@ -15,4 +15,10 @@ CREATE TABLE "public"."customer" (
 CREATE INDEX "index_personal_breakdown" ON "public"."customer" USING btree( "personal_breakdown" Asc NULLS Last );
 -- -------------------------------------------------------------
 
+-- CREATE FOREIGN KEYS -----------------------------------------
+alter table public.customer
+    add constraint customer_type_id_key
+        foreign key (customer_type_id_key) references public.agent_type;
+-- -------------------------------------------------------------
+
 COMMIT;
