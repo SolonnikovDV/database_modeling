@@ -18,19 +18,19 @@ CREATE TABLE "public"."stock" (
 -- -------------------------------------------------------------
 
 -- CREATE INDEX "index_location_f_key" -------------------------
+-- location sort
 CREATE INDEX "index_location_f_key" ON "public"."stock" USING btree( "location_f_key" );
 -- -------------------------------------------------------------
 
 -- CREATE INDEX "index_product_id_f_key" -----------------------
-CREATE INDEX "index_product_id_f_key" ON "public"."stock" USING btree( "product_id_f_key" );
+-- search product name + also searching by id
+CREATE INDEX "index_product_id_name_f_key" 
+	ON "public"."stock" USING btree( "product_id_f_key" Asc NULLS Last, "product_name_f_key" Asc NULLS Last;
 -- -------------------------------------------------------------
 
 -- CREATE INDEX "index_transaction_in_f_key" -------------------
+-- find transaction with all attributes are comming to a storage place
 CREATE INDEX "index_transaction_in_f_key" ON "public"."stock" USING btree( "transaction_in_f_key" );
--- -------------------------------------------------------------
-
--- CREATE INDEX "index_product_name_f_key" ---------------------
-CREATE INDEX "index_product_name_f_key" ON "public"."stock" USING btree( "product_name_f_key" );
 -- -------------------------------------------------------------
 
 COMMIT;
