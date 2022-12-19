@@ -10,6 +10,7 @@ CREATE TABLE "public"."brand" (
 -- -------------------------------------------------------------
 
 -- CREATE INDEX "index_brand_name" -----------------------------
+----allow fast search by brand
 CREATE INDEX "index_brand_name" ON "public"."brand" USING btree( "brand_name" Asc NULLS Last, "brand_id" Asc NULLS Last );
 -- -------------------------------------------------------------
 
