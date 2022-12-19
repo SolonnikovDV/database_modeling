@@ -25,4 +25,10 @@ CREATE INDEX "index_loyality_breakdown"
 CREATE INDEX "index_loyality_breakdown_value" ON "public"."customer_loyality_breakdown" USING btree( "loyality_breakdown_value" );
 -- -------------------------------------------------------------
 
+-- CREATE FOREIGN KEYS -----------------------------------------
+alter table public.customer
+    add constraint customer_type_id_key
+        foreign key (customer_type_id_key) references public.agent_type;
+ -- -------------------------------------------------------------
+
 COMMIT;
