@@ -16,6 +16,7 @@ COMMENT ON COLUMN "public"."bonus_rubles"."loyality_breakdown_id_f_key" IS 'perc
 -- -------------------------------------------------------------
 
 -- CREATE INDEX "index_total_bonus" ----------------------------
+--csearch by bonus value
 CREATE INDEX "index_total_bonus" ON "public"."bonus_rubles" USING btree( "total_bonus" );
 -- -------------------------------------------------------------
 
