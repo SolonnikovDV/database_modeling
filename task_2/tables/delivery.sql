@@ -13,6 +13,7 @@ CREATE TABLE "public"."delivery" (
 -- -------------------------------------------------------------
 
 -- CREATE INDEX "index_delivery_type" --------------------------
+--searching delivery type: include/disable, to_the_door, to_a_pick_point etc.
 CREATE INDEX "index_delivery_type" ON "public"."delivery" USING btree( "delivery_type" );
 -- -------------------------------------------------------------
 
