@@ -14,10 +14,12 @@ CREATE TABLE "public"."pick_point" (
 -- -------------------------------------------------------------
 
 -- CREATE INDEX "index_current_capacity" -----------------------
+--filtering pick-point by capasity
 CREATE INDEX "index_current_capacity" ON "public"."pick_point" USING btree( "current_capacity" );
 -- -------------------------------------------------------------
 
 -- CREATE INDEX "index_location_id_f_key" ----------------------
+--filtering pick-point by location
 CREATE INDEX "index_location_id_f_key" ON "public"."pick_point" USING btree( "location_id_f_key" );
 -- -------------------------------------------------------------
 
