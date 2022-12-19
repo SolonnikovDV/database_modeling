@@ -23,4 +23,9 @@ CREATE INDEX "index_unit_properties_f_key" ON "public"."container_properties" US
 CREATE INDEX "index_container_attribute" ON "public"."container_properties" USING btree( "container_volume" Asc NULLS Last, "container_type" Asc NULLS Last );
 -- -------------------------------------------------------------
 
+-- CREATE FOREIGN KEYS -----------------------------------------
+alter table public.container
+    add constraint container_container_properties_container_id_fk
+        foreign key (container_properties_id_f_key) references public.container_properties;
+-- -------------------------------------------------------------
 COMMIT;
