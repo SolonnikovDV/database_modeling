@@ -14,10 +14,12 @@ CREATE TABLE "public"."container_properties" (
 -- -------------------------------------------------------------
 
 -- CREATE INDEX "index_unit_properties_f_key" ------------------
+--search by volume unit mesuare
 CREATE INDEX "index_unit_properties_f_key" ON "public"."container_properties" USING btree( "unit_properties_f_key" );
 -- -------------------------------------------------------------
 
 -- CREATE INDEX "index_container_attribute" --------------------
+--search by attibutes
 CREATE INDEX "index_container_attribute" ON "public"."container_properties" USING btree( "container_volume" Asc NULLS Last, "container_type" Asc NULLS Last );
 -- -------------------------------------------------------------
 
