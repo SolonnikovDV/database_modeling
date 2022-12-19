@@ -13,7 +13,9 @@ CREATE TABLE "public"."vendor" (
 -- -------------------------------------------------------------
 
 -- CREATE INDEX "index_vendor_name" ----------------------------
-CREATE INDEX "index_vendor_name" ON "public"."vendor" USING btree( "vendor_name" );
+-- fast search info about vendor in one query
+CREATE INDEX "index_vendor_name" 
+	ON "public"."vendor" USING btree( "vendor_name" Asc NULLS Last, "location_id_f_key" Asc NULLS Last, "vendor_type_id_f_key" Asc NULLS Last );
 -- -------------------------------------------------------------
 
 COMMIT;
