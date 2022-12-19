@@ -16,14 +16,17 @@ CREATE TABLE "public"."supply_order" (
 -- -------------------------------------------------------------
 
 -- CREATE INDEX "index_order_date" -----------------------------
+-- sort by date of order
 CREATE INDEX "index_order_date" ON "public"."supply_order" USING btree( "order_date" );
 -- -------------------------------------------------------------
 
 -- CREATE INDEX "index_product_name" ---------------------------
+-- allow fast search y name of product into supply order or stock
 CREATE INDEX "index_product_name" ON "public"."supply_order" USING btree( "product_name" );
 -- -------------------------------------------------------------
 
 -- CREATE INDEX "index_vendor_id_f_key" ------------------------
+-- allow fast searching by vendor name
 CREATE INDEX "index_vendor_id_f_key" ON "public"."supply_order" USING btree( "vendor_id_f_key" );
 -- -------------------------------------------------------------
 
