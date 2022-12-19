@@ -23,7 +23,7 @@ CREATE TABLE "public"."purchase_order" (
 CREATE INDEX "index_order_date" ON "public"."purchase_order" USING btree( "order_date" );
 -- -------------------------------------------------------------
 
--- CREATE INDEX "index_spec_name" ------------------------------
+-- CREATE FOREIGN KEYS -----------------------------------------
 alter table public.purchase_order
     add constraint customer_id_f_key
         foreign key (customer_id_f_key) references public.customer;
